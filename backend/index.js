@@ -1,7 +1,7 @@
 import express from 'express';
 const app= express();
 import dotenv from 'dotenv';
-import Note from'./models/note.js
+import Note from './models/note.js'
 app.use(express.json())
 app.use(express.static('dist'))
 
