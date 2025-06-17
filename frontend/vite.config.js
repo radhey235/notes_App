@@ -2,10 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // vite.config.js
-export default {
+export default defineConfig({
+  plugins: [react()],
   server: {
     proxy: {
-      '/notes': 'http://localhost:3001/api/notes'
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
     }
-  }
-}
+  },
+})
